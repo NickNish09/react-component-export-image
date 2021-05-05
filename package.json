@@ -1,5 +1,5 @@
 {
-  "name": "@nicknish/react-component-export-image",
+  "name": "react-component-export-img",
   "version": "1.0.6",
   "description": "export component as jpeg, png, pdf",
   "main": "dist/index.js",
