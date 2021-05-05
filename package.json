@@ -27,7 +27,6 @@
   },
   "homepage": "https://github.com/salman-monetate/react-component-export-image#readme",
   "dependencies": {
-    "html2canvas": "^1.0.0-alpha.12-rc2",
     "jspdf": "^2.3.1"
   },
   "devDependencies": {

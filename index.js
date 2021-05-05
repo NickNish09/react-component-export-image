@@ -1,4 +1,4 @@
-import html2canvas from 'html2canvas';
+import html2canvas from './html2canvas';
 import JsPDF from 'jspdf';
 import ReactDOM from 'react-dom';
 
@@ -23,7 +23,7 @@ const DEFAULT_JPEG = {
 const DEFAULT_PDF = {
     fileName: 'component.pdf',
     type: fileType.PDF,
-    html2CanvasOptions: {}, 
+    html2CanvasOptions: {},
     pdfOptions: {}
 };
 
@@ -62,9 +62,9 @@ const getPDF = (canvas, {w, h, orientation, unit = 'mm', pdfFormat}) => {
 }
 
 const exportComponent = (node, {
-    fileName, 
-    type, 
-    html2CanvasOptions, 
+    fileName,
+    type,
+    html2CanvasOptions,
     pdfOptions
 }) => {
     if(!node.current) {
@@ -80,9 +80,9 @@ const exportComponent = (node, {
         if (type === fileType.PDF) {
             const pdf = getPDF(canvas, pdfOptions)
             pdf.addImage(
-                canvas.toDataURL(fileType.PNG, 1.0), 
-                'PNG', 
-                pdfOptions.x || 0, 
+                canvas.toDataURL(fileType.PNG, 1.0),
+                'PNG',
+                pdfOptions.x || 0,
                 pdfOptions.y || 0,
                 pdfOptions.w || canvas.width,
                 pdfOptions.h || canvas.height
@@ -118,7 +118,7 @@ const exportComponentAsJPEG = (node, parameters = {}) => exportComponent(node, {
  */
 const exportComponentAsPDF = (node, parameters = {}) => exportComponent(node, {...DEFAULT_PDF, ...parameters});
 
-export { 
+export {
     exportComponentAsJPEG,
     exportComponentAsPDF,
     exportComponentAsPNG
